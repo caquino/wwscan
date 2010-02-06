@@ -1,0 +1,59 @@
+RELEASE: Libping 1.12 Jul 05 2001
+---------------------------------
+** RING:     The utility formerly known as "pinger"
+             added functionality from the library:
+             ring -r hostname ==> reports the round trip time in
+             milliseconds.
+** LIBPING:  added tpinghost and tpingthost, two functions which
+             return the round trip time in milliseconds. 
+** API:      int tpinghost( char *hostname ); 
+             int tpingthost( char *hostname, int timeout );
+
+RELEASE: Libping 1.11 Jun 03 2001
+---------------------------------
+** LIBPING:  Bug fix, changed the connection type and the timeout 
+             mechanism for greater platform support.
+
+
+RELEASE: Libping 1.10 JUN 01 2001 15:49
+---------------------------------------
+** PINGER:   added pop3, smtp, http, and https pings
+** LIBPING:  added function calls for the above, namely
+             pingpop3( hostname ), pingtpop3( hostname, timeout )
+             pingsmtp( hostname ), pingtsmtp( hostname, timeout )
+             pinghttp( hostname ), pingthttp( hostname, timeout )
+
+RELEASE: Libping 1.02 MAY 29 2001 08:49
+---------------------------------------
+** Minor bug fix, changed symbol in library
+** Ported to AIX.
+
+
+RELEASE: Libping 1.01 MAY 22 2001 14:25
+---------------------------------------
+** Minor bug fix released, fixes a prototyping error.
+
+
+RELEASE: Libping 1.00 MAY 21 2001 10:09
+---------------------------------------
+** Initial release
+   libping ICM_ECHO library & ring, a script friendly ping utility.
+
+
+
+
+
+----------------------------------------------------------------------
+Copyright information:
+
+Copyright (C) 2000  Jeffrey Fulmer <jdfulmer@armstrong.com>
+
+Permission is granted to anyone to make or distribute verbatim
+copies of this document as received, in any medium, provided that
+the copyright notice and this permission notice are preserved, thus
+giving the recipient permission to redistribute in turn.
+
+Permission is granted to distribute modified versions of this
+document, or of portions of it, under the above conditions,
+provided also that they carry prominent notices stating who last
+changed them.

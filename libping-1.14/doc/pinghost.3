@@ -1,0 +1,69 @@
+.\" Copyright 2001 by Jeffrey Fulmer <jdfulmer@armstrong.com>
+.\"
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual provided the copyright notice and this permission notice are
+.\" preserved on all copies.
+.\"
+.\" Permission is granted to copy and distribute modified versions of this
+.\" manual under the conditions for verbatim copying, provided that the
+.\" entire resulting derived work is distributed under the terms of a
+.\" permission notice identical to this one
+.\" 
+.TH PINGHOST 3  "May 18, 2001" "" "libping Programmer's Manual"
+.SH NAME
+.B pinghost, pingthost
+\- issue an ICMP request to a host.\fR
+.br
+.B tpinghost, tpingthost
+\- issue an ICMP request to a host and return the round trip time in milliseconds. 
+.SH SYNOPSIS
+.nf
+.B #include <ping.h>
+.sp
+.BI "int pinghost(const char *" host " );
+.sp
+.BI "int pingthost(const char *" host ", int t );
+.sp
+.BI "int tpinghost(const char *" host " );
+.sp
+.BI "int tpingthost(const char *" host ", int t ); 
+.fi
+.SH DESCRIPTION
+The \fBpinghost()\fP function issues a icmp echo request to a 
+host.  It returns 1 if the host replies, 0 if the ping request
+timed out and less than zero on an error (see return values below.)
+.PP
+The \fBpingthost()\fP function is similar, except it accepts a 
+user specified time out value. The default time out value used
+by pinghost() is 2 seconds. On slower, less reliable networks
+you may want to increase the time out value. (pronounced: ping-tee-host)
+.PP
+The \fBtpinghost()\fP function issues a icmp echo request to a
+host.  On success, it returns the round trip time in milliseconds.
+(pronounced: tee-ping-host)
+.PP
+The \fBtpingthost()\fP function is similar, except it accepts a
+user specified time out value. The default time out value used
+by pinghost() is 2 seconds. On slower, less reliable networks
+you may want to increase the time out value. 
+(pronounced: tee-ping-tee-host)
+.SH "RETURN VALUE"
+The \fBpinghost()\fP, \fBpingthost()\fP, \fBtpinghost()\fP and 
+\fBtpingthost()\fP functions all return an integer value.\fP
+.br
+>1 \-\- Round trip time in milliseconds.\fB
+.br
+ 1 \-\- Host is alive.\fB
+.br
+ 0 \-\- Connection timed out.\fB
+.br
+\-1 \-\- Host or service is not reachable.\fB
+.br
+\-2 \-\- Socket error.\fB
+.br
+\-3 \-\- Connection refused.
+.SH "CONFORMING TO"
+SVID 3, POSIX, BSD 4.3, ISO 9899
+.SH "SEE ALSO"
+.BR ring "(1), "  echohost "(3), "  pinghttp "(3), " pingpop3 "(3), "  pingsmtp "(3)"
+

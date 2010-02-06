@@ -1,0 +1,62 @@
+table {
+        background-color: #c0c5ed;
+}
+
+table.main {
+        background-color: #334567;
+}
+
+body {
+        background-color: #ffffff;
+}
+
+td.scan {
+        font-family: arial, helvetica, tahome, verdana;
+        background-color: #ffffff;
+        color: #000000;
+}
+
+td.header {
+        font-family: arial, helvetica, tahoma, verdana;
+        background-color: #c0c5ed;
+        color: #000000;
+}
+
+td.alert {
+        font-family: arial, helvetica, tahoma, verdana;
+        font-weight: bold;
+        text-decoration: blink;
+        background-color: #ffff00;
+        color: #000000;
+}
+
+td {
+        font-family: arial, helvetica, tahoma, verdana;
+        color: #FFFFFF;
+}
+
+a {
+        text-decoration: none;
+        color: #FF0000;
+}
+
+a.header {
+        color: #FFFFFF;
+}
+
+a:hover {
+        text-decoration: underline;
+}
+
+.osdn
+{
+        font-size: 8pt;
+        font-family: Geneva,Arial,Verdana,Sans-Serif;
+        text-decoration: none;
+        color: #505050;
+}
+
+img { 
+	border-width: 0 
+	
+}

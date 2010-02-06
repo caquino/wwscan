@@ -1,0 +1,109 @@
+.ig \"-*- ring -*-
+Copyright (C) 2001 Jeffrey Fulmer
+
+ring/libping is distibuted under the terms of the GNU GPL.
+..
+.de TQ
+.br
+.ns
+.TP \\$1
+..
+.\" Like TP, but if specified indent is more than half
+.\" the current line-length - indent, use the default indent.
+.de Tp
+.ie \\n(.$=0:((0\\$1)*2u>(\\n(.lu-\\n(.iu)) .TP
+.el .TP "\\$1"
+..
+.TH RING 1 "06 JULY 2001" "ring v1.13"
+.SH PROGRAM NAME
+.B ring
+\- A programmer friendly ping-like utility.
+.SH INTRODUCTION
+Ring is a ping-like utility written specifically for inclusion in scripts.  Its output is an integer enumeration which makes it easy to parse and easy to interpret.  When invoked with \-s ring does not print a newline \'\\n\' character so there is no need to chomp it.  Ring is designed to always return a value.  It will timeout on an unreachable host as well as an unreachable network.
+\fR\fR
+.SH INVOCATION
+The format for invoking ring is: ring [options] host \fR
+Ring supports the following command line options:\fR\fR
+.TP
+\fB\-V\fR, \fB\-\-version\fR
+VERSION, prints the version number
+.TP
+\fB\-h\fR, \fB\-\-help\fR
+HELP, prints the help section which includes a summary of all the command line options.
+.TP
+\fB\-t NUM\fR, \fB\-\-timeout=NUM\fR
+TIMEOUT, NUM seconds of inactivity before the connection times out. Default timeout value is 2. For unreliable or slow networks should you probably increase this value in order to avoid false negatives.
+.TP
+\fB\-r\fR, \fB\-\-rtt\fR
+ROUND TRIP TIME, instructs ring to return an integer which represents the rtt in milliseconds.
+.TP
+\fB\-e NUM, \fB\-\-echo=NUM\fR
+ECHO, sends a tcp echo request of NUM bytes to a host.
+.TP
+\fB\-m\fR, \fB\-\-mail\fR
+MAIL, ping a smtp mail host.  This option issues a helo command to an smtp server. It returns 1\-\-is alive\-\-if the host replies "250 domain.com Hello".  It returns 0\-\-host is unavailable\-\-if the server can\'t be reached and a negative number on a networking error.
+.TP
+\fB\-p\fR, \fB\-\-pop\fR
+POP, ping a pop3 mail host.  This option issues a socket request to a POP3 server.  It returns 1\-\-is alive\-\-if the host replies "+OK". It returns 0\-\-host is unavailable\-\-if the server can\'t be rea
+ched and a negative number on a networking error.
+.TP
+\fB\-w\fR, \fB\-\-www\fR
+WWW, ping a world wide web server.  This option issues a HTTP GET request to a http/https host.  It returns 1\-\-is alive\-\-if the host replies 200.  This option will return 0\-\-host is unavailable\-\-if the requested page does not exist or does not properly render.  This means the server could be functioning but the page in question is not.  Essentially you are pinging a page.  To ping a server, just use the hostname, i.e., ring \-\-www hostname.  NOTE: libping must be compiled with openssl in order to support https requests.  See the README file.
+.TP
+\fB\-s\fR, \fB\-\-script\fR
+SCRIPT, tells ring to print script friendly output.  With this option invoked ring will print single digit codes without a trailing newline \'\\n\' character.  See the next section for an explanation of the return codes.
+.SH RETURN CODES
+When invoked at the command like without the \-s option, ring displays a written message which interprets the libping output, i.e., 1-host is alive.  But with \-s invoked ring returns a number only.\fR
+.br
+Below is an explanation of the return codes: \fR
+.br
+>1 \-\- Round trip time in milliseconds. (\-r, \-\-rtt option)
+.br
+ 1 \-\- Host responded to request; it is alive.\fR
+.br
+ 0 \-\- Connection timed out.\fR
+.br
+\-1 \-\- Host or service is unreachable.\fR 
+.br
+\-2 \-\- Socket error, unable to create socket.\fR
+.br
+\-3 \-\- Connection refused.\fR
+.br
+
+.SH ERRORS
+The most likely cause of the \-2 socket error is insufficient permission.  Ring must be setuid root. To correct this problem, as root run the following commands:\fR
+.br
+# chown root:root ring\fR
+.br
+# chmod 4755 ring\fR
+.br
+The file permissions should look like this:\fR
+.br
+-rwsr-xr-x   1 root  root   1983 May 18 21:15 ring\fR 
+.SH AUTHOR
+Jeffrey Fulmer <jdfulmer@armstrong.com>
+.SH BUGS
+Report bugs to jdfulmer@armstrong.com.
+Give a detailed description of the problem and report the version of ring that you are using.
+.SH COPYRIGHT
+Copyright \(co 2000 2001 Jeffrey Fulmer
+.LP
+This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public
+License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any lat
+er version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied
+ warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more det
+ails.
+
+You should have received a copy of the GNU General Public License along with this program; if not, write to the Fr
+ee Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+.LP
+.SH AVAILABILITY
+The most recently released versions of libping and ring are available by
+anonymous ftp from ftp.armstrong.com in the directory pub/libping.
+.LP
+.SH SEE ALSO
+\fR\fR
+Ring is linked against libping and included in the libping distribution.  For information about how your programs can send icmp echo requests directly to a server or to learn more about the libping library, consult the pinghost(3) pinghttp(3) pingsmtp(3) pingpop3(3) man pages.
+

@@ -1,0 +1,12 @@
+Authors of libping
+
+Jeffrey Fulmer   --   Designed and implemented libping,
+a library for invoking ICMP_ECHO requests, pinging net-
+work services such as HTTP, HTTPS, POP3, SMTP  plus the  
+ring utility, a script friendly utility  which utilizes 
+libping.
+
+[ jdfulmer@armstrong.com ]
+
+
+

@@ -1,0 +1,114 @@
+2001/07/24 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.14 RELEASE--* RELEASE_1-14_JUL-24-2001
+
+2001/07/23 Jeffrey Fulmer <jfulmer@armstrong.com>
+ * lib/echo.c          minor corrections.
+
+2001/07/09 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.13 RELEASE--* RELEASE_1-13_JUL-09-2001
+
+2001/07/06 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * lib/echo.c          added to the distribution.
+ * lib/echo.h          added to the distribution.
+ * src/main.c          added echo functionality.
+ * lib/http.c/h        added round trip time option.
+ * lib/pop3.c/h        added round trip time option.
+ * lib/smtp.c/h        added round trip time option.
+ * doc/*               updated man page information.
+
+2001/07/05 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.12 RELEASE--* RELEASE_1-12_JUL-05-2001 
+
+2001/06/25 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * src/Makefile.am     changed the post install mechanism to increase
+                       portability.
+ * src/main.c          added -r,--rtt option to ring.
+
+2001/06/24 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * src/Makefile.am     changed the name pinger to ring.
+
+2001/06/23 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * include/ping.h      changed the public protypes.
+ * lib/http.c,.h       replaced macro definitions with functions.
+ * lib/pop3.c,.h       replaced macro definitions with functions.
+ * lib/smtp.c,.h       replaced macro definitions with functions.
+ * lib/ping.c          modified elapsed_time to return int milliseconds,
+                       replaced macro definitions with functions,
+                       added tpinghost and tpingthost functions to return
+                       roundtrip time in milliseconds.
+
+2001/06/04 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.11 RELEASE--* RELEASE_1-11_JUN-04-2001
+
+2001/06/03 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * lib/http.c          incorporated the changes from sock.h;
+                       changed the import statements.
+ * lib/pop3.c          changed the import statements.
+ * include/ping.h      added fucntion definitions.
+
+2001/06/02 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * lib/sock.h          moved includes into sock.c
+ * lib/sock.c          changed the connection from non-blocking to blocking;
+                       added alarm for timeouts as some platforms were having
+                       trouble with the non-blocking connection. 
+ * lib/smtp.c          changed the sock condition to reflect changes is sock.c
+ * lib/pop3.c          changed the sock condition to reflect changes is sock.c
+
+2001/06/01 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.10 RELEASE--* RELEASE_1-10_JUN-01-2001
+
+2001/05/31 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * doc/pingsmtp.3     added to the distribution.
+ * doc/pingpop3.3     added to the distribution.
+ * doc/pinghttp.3     added to the distribution.
+ * configure.in       added openssl support.
+
+2001/05/30 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * lib/smtp.h smtp.c  added to the distribution.
+ * lib/http.h http.c  added to the distribution.
+ * lib/pop3.h pop3.c  added to the distribution.
+ * lib/sock.c         added non-blocking option and timeout
+ * include/ping.h     added new function definitions.
+ * src/main.c         added new library calls and cmd line options.
+
+2001/05/29 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.02 RELEASE--* RELEASE_1-02_MAY-29-2001
+
+2001/05/26 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * include/ping.h     changed the function call to the library
+ * lib/ping.c         changed the name of the function call.
+ * src/version.c      version increment.
+
+2001/05/22 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.01 RELEASE--* RELEASE_1-01_MAY-22-2001
+
+2001/05/22 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * include/ping.h     fixed a prototyping error
+ * lib/ping.c         minor bug fix.
+ * doc/pinghost.3     changed the appropriate documentation.
+ * src/main.c         fixed function call.
+ * src/version.c      increment version number, 1.01.
+
+2001/05/21 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ *--LIBPING 1.00 RELEASE--* RELEASE_1-00_MAY-21-2001
+
+2001/05/20 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * NEWS               added to the distribution.
+ * include/Makefile   minor corrections.
+ * doc/pinger.1       pinger man page, added to the distribution.
+ * doc/pinghost.3     pinghost() man page, added to the distro.
+ * doc/Makefile.am    added man pages to the distribution.
+
+2001/05/19 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * distribution       ported to Solaris 7,8
+ * configure.in       added check for resolv 
+ * lib/ping.c         added explicit (sockaddr*) in sendto and
+                      recvfrom to silence the compiler. 
+
+2001/05/18 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * src/*              added pinger utility to the distribution.
+
+2001/05/14 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * Initial revision
+
+

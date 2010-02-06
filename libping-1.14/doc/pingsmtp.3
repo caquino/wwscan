@@ -1,0 +1,72 @@
+.\" Copyright 2001 by Jeffrey Fulmer <jdfulmer@armstrong.com>
+.\"
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual provided the copyright notice and this permission notice are
+.\" preserved on all copies.
+.\"
+.\" Permission is granted to copy and distribute modified versions of this
+.\" manual under the conditions for verbatim copying, provided that the
+.\" entire resulting derived work is distributed under the terms of a
+.\" permission notice identical to this one
+.\" 
+.TH PINGSMTP 3  "July 06, 2001" "" "libping Programmer's Manual"
+.SH NAME
+.B pingsmtp, pingtsmtp 
+\- issue a HELO command to an SMTP host.
+.br
+.B tpingsmtp, tpingtsmtp
+\- issue a HELO command to an SMTP host and return the round trip time in 
+milliseconds.
+.SH SYNOPSIS
+.nf
+.B #include <ping.h>
+.sp
+.BI "int pingsmtp(const char *" host " );
+.sp
+.BI "int pingtsmtp(const char *" host ", int t );
+.sp
+.BI "int tpingsmtp(const char *" host " );
+.sp
+.BI "int tpingtsmtp(const char *" host ", int t ); 
+.fi
+.SH DESCRIPTION
+The \fBpingsmtp()\fP function issues a HELO dude command to a 
+host.  It returns 1 if the host replies 250, 0 if the ping request
+times out and less than zero on an networking error (see return
+values below.)
+.PP
+The \fBpingtsmtp()\fP function is similar, except it accepts a 
+user specified time out value. The default timeout value used
+by pingsmtp() is 10 seconds. On slower, less reliable networks
+you may want to increase the time out value.
+.PP
+The \fBtpingsmtp()\fP function issues a HELO dude command to a
+host. On success, it returns the round trip time in milliseconds.
+(pronounced: tee-ping-SMTP)
+.PP
+The \fBtpingtsmtp()\fP function is similar, except it accepts a
+user specified time out value. The default timeout value used
+by tpingtsmtp() is 10 seconds. On slower, less reliable networks
+you may want to increase the time out value. 
+(pronounced: tee-ping-tee-SMTP)
+.SH "RETURN VALUE"
+The \fBpingsmtp()\fP, \fBpingtsmtp()\fP \fBtpingsmtp()\fP and 
+\fBtpingtsmtp()\fP functions return an integer value.\fB
+.br
+>1 \-\- Round trip time in milliseconds.
+.br
+ 1 \-\- Host is alive.\fB
+.br
+ 0 \-\- Connection timed out.\fB
+.br
+\-1 \-\- Host or service is unreachable.\fB
+.br
+\-2 \-\- Socket error.\fB
+.br
+\-3 \-\- Connection refused.\fB
+.br
+.SH "CONFORMING TO"
+SVID 3, POSIX, BSD 4.3, ISO 9899
+.SH "SEE ALSO"
+.BR ring "(1), "  pinghost "(3), "  echohost "(3), " pinghttp "(3), "  pingpop3 "(3)"
+

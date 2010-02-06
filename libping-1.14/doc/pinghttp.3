@@ -1,0 +1,73 @@
+.\" Copyright 2001 by Jeffrey Fulmer <jdfulmer@armstrong.com>
+.\"
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual provided the copyright notice and this permission notice are
+.\" preserved on all copies.
+.\"
+.\" Permission is granted to copy and distribute modified versions of this
+.\" manual under the conditions for verbatim copying, provided that the
+.\" entire resulting derived work is distributed under the terms of a
+.\" permission notice identical to this one
+.\" 
+.TH PINGHTTP 3  "July 06, 2001" "" "libping Programmer's Manual"
+.SH NAME
+.B pinghttp, pingthttp 
+\- issue an HTTP/HTTPS GET request to a host.
+.br
+.B tpinghttp, tpingthttp
+\- issue an HTTP/HTTPS GET request to a host and return the round
+trip time in milliseconds.
+.SH SYNOPSIS
+.nf
+.B #include <ping.h>
+.sp
+.BI "int pinghttp( char *" host " );
+.sp
+.BI "int pingthttp( char *" host ", int t );
+.sp
+.BI "int tpinghttp( char *" host " );
+.sp
+.BI "int tpingthttp( char *" host ", int t ); 
+.fi
+.SH DESCRIPTION
+The \fBpinghttp()\fP function issues a HTTP GET request to a
+host.  It returns 1 if the host replies 200, 0 if the ping request
+times out and less than zero on an error. If a page is unavailable
+but the host is up, pinghttp will return -1 since the host did not
+return HTTP code 200 (see return values below.)
+.PP
+The \fBpingthttp()\fP function is similar, except it accepts a 
+user specified timeout value. The default timeout value used
+by pingthttp() is 5 seconds. On slower, less reliable networks
+you may want to increase the timeout value. (pronounced: ping-tee-host)
+.PP
+The \fBtpinghttp()\fP function issues a HTTP GET request to a
+host. On success, the function returns the round trip time in milliseconds.
+(pronounced: tee-ping-http)
+.PP
+The \fBtpingthttp()\fP function is similar, except it accepts a
+user specified time out value. The default timeout value used
+by tpingthttp() is 5 seconds. On slower, less reliable networks
+you may want to increase the timeout value. 
+(pronounced: tee-ping-tee-http)
+.SH "RETURN VALUE"
+The \fBpinghttp()\fP, \fBpingthttp()\fP, \fBtpinghttp()\fP and \fBtpingthttp()\fP 
+functions return an integer value.\fB
+.br
+>1 \-\- Round trip time in milliseconds.\fB
+.br
+ 1 \-\- Host is alive.\fB
+.br
+ 0 \-\- Connection timed out.\fB
+.br
+\-1 \-\- Host or service is not reachable.\fB
+.br
+\-2 \-\- Socket error.\fB
+.br
+\-3 \-\- Connection refused.\fB
+.br
+.SH "CONFORMING TO"
+SVID 3, POSIX, BSD 4.3, ISO 9899
+.SH "SEE ALSO"
+.BR ring "(1), "  pinghost "(3), "  echohost "(3), " pingpop3 "(3), "  pingsmtp "(3)"
+

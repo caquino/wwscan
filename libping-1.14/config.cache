@@ -1,0 +1,62 @@
+# This file is a shell script that caches the results of configure
+# tests run on this system so they can be shared between configure
+# scripts and configure runs.  It is not useful on other systems.
+# If it contains results you don't want to keep, you may remove or edit it.
+#
+# By default, configure uses ./config.cache as the cache file,
+# creating it if it does not exist already.  You can give configure
+# the --cache-file=FILE option to use a different cache file; that is
+# what configure does when it calls configure scripts in
+# subdirectories, so they share the cache.
+# Giving --cache-file=/dev/null disables caching, for debugging configure.
+# config.status only pays attention to the cache file if you give it the
+# --recheck option to rerun configure.
+#
+ac_cv_c_const=${ac_cv_c_const=yes}
+ac_cv_exeext=${ac_cv_exeext=no}
+ac_cv_func_gethostbyname=${ac_cv_func_gethostbyname=yes}
+ac_cv_func_memcpy=${ac_cv_func_memcpy=yes}
+ac_cv_func_socket=${ac_cv_func_socket=yes}
+ac_cv_func_strcasecmp=${ac_cv_func_strcasecmp=yes}
+ac_cv_func_strchr=${ac_cv_func_strchr=yes}
+ac_cv_func_strcmp=${ac_cv_func_strcmp=yes}
+ac_cv_func_strlen=${ac_cv_func_strlen=yes}
+ac_cv_func_strncasecmp=${ac_cv_func_strncasecmp=yes}
+ac_cv_func_strncmp=${ac_cv_func_strncmp=yes}
+ac_cv_func_strncpy=${ac_cv_func_strncpy=yes}
+ac_cv_func_strstr=${ac_cv_func_strstr=yes}
+ac_cv_header__usr_include_include_openssl_opensslv_h=${ac_cv_header__usr_include_include_openssl_opensslv_h=no}
+ac_cv_header__usr_include_openssl_opensslv_h=${ac_cv_header__usr_include_openssl_opensslv_h=yes}
+ac_cv_header__usr_include_ssl_include_openssl_opensslv_h=${ac_cv_header__usr_include_ssl_include_openssl_opensslv_h=no}
+ac_cv_header__usr_lib_ssl_include_openssl_opensslv_h=${ac_cv_header__usr_lib_ssl_include_openssl_opensslv_h=no}
+ac_cv_header__usr_local_include_openssl_opensslv_h=${ac_cv_header__usr_local_include_openssl_opensslv_h=no}
+ac_cv_header__usr_local_ssl_include_openssl_opensslv_h=${ac_cv_header__usr_local_ssl_include_openssl_opensslv_h=no}
+ac_cv_header__usr_pkg_include_openssl_opensslv_h=${ac_cv_header__usr_pkg_include_openssl_opensslv_h=no}
+ac_cv_header_arpa_inet_h=${ac_cv_header_arpa_inet_h=yes}
+ac_cv_header_netdb_h=${ac_cv_header_netdb_h=yes}
+ac_cv_header_netinet_in_h=${ac_cv_header_netinet_in_h=yes}
+ac_cv_header_netinet_in_systm_h=${ac_cv_header_netinet_in_systm_h=yes}
+ac_cv_header_off_include_openssl_opensslv_h=${ac_cv_header_off_include_openssl_opensslv_h=no}
+ac_cv_header_stdc=${ac_cv_header_stdc=yes}
+ac_cv_header_stdlib_h=${ac_cv_header_stdlib_h=yes}
+ac_cv_header_sys_socket_h=${ac_cv_header_sys_socket_h=yes}
+ac_cv_header_sys_time_h=${ac_cv_header_sys_time_h=yes}
+ac_cv_header_sys_times_h=${ac_cv_header_sys_times_h=yes}
+ac_cv_header_time=${ac_cv_header_time=yes}
+ac_cv_header_unistd_h=${ac_cv_header_unistd_h=yes}
+ac_cv_lib_resolv_res_search=${ac_cv_lib_resolv_res_search=yes}
+ac_cv_lib_socket_socket=${ac_cv_lib_socket_socket=no}
+ac_cv_path_LD=${ac_cv_path_LD=/usr/bin/ld}
+ac_cv_path_NM=${ac_cv_path_NM='/usr/bin/nm -B'}
+ac_cv_path_install=${ac_cv_path_install='/usr/bin/install -c'}
+ac_cv_prog_CC=${ac_cv_prog_CC=gcc}
+ac_cv_prog_CPP=${ac_cv_prog_CPP='gcc -E'}
+ac_cv_prog_LN_S=${ac_cv_prog_LN_S='ln -s'}
+ac_cv_prog_RANLIB=${ac_cv_prog_RANLIB=ranlib}
+ac_cv_prog_cc_cross=${ac_cv_prog_cc_cross=no}
+ac_cv_prog_cc_g=${ac_cv_prog_cc_g=yes}
+ac_cv_prog_cc_works=${ac_cv_prog_cc_works=yes}
+ac_cv_prog_gcc=${ac_cv_prog_gcc=yes}
+ac_cv_prog_gnu_ld=${ac_cv_prog_gnu_ld=yes}
+ac_cv_prog_make_make_set=${ac_cv_prog_make_make_set=yes}
+ac_cv_type_size_t=${ac_cv_type_size_t=yes}

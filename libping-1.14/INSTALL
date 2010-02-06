@@ -1,0 +1,129 @@
+
+
+            INSTALLATION PROCEDURE & PLATFORM INFORMATION
+
+
+
+1. In a nutshell, to install the application in the default directory,
+   ( /usr/local ), run the following commands:
+   $ ./configure
+   $ make
+   $ make install
+
+   This will install the application ( ring ) in the default directory
+   /usr/local/bin.  If that directory is in your PATH, then to run ring
+   and view the online help type:
+   $ ring --help
+
+   It will also install libping in /usr/local/lib and place the header file
+   ping.h in /usr/local/include.
+
+   To learn more about ring, make sure /usr/local/man is in your MANPATH
+   and type:
+   $ man ring  
+   
+   For information about the C library functions, type:
+   $ man pinghost
+
+   For more details, read on. Especially if you want to install libping
+   in a directory other that /usr/local
+
+2. Configuration
+   The configure script attempts to guess the values which are set
+   on your platform.  If all goes well, you should only have to run it
+   with some preferred arguments.  The more notable ones are listed
+   below:
+   --help                   prints the configure script's help section
+   --prefix=/some/dir       installs the files in /some/dir
+   --bindir=/some/bin       installs the executable in /some/bin
+   --mandir=/some/man       installs the man page in /some/man
+   --with-ssl=/path/to/ssl  compiles the library with ssl support for https
+
+   I prefer to install the library in /usr and the application in /usr/local/bin.
+   To accomplish that, issue this command: 
+   $ ./configure --prefix=/usr --bindir=/usr/local/bin
+
+   Of course this is a matter of personal preference....
+
+   If you want https support and your've installed openssl in it's default location
+   then configure libping by issuing the following command:
+   $ ./configure --prefix=/usr --bindir=/usr/local/bin --with-ssl=/usr/local/ssl
+
+   If it runs successfully, the configure script creates the Makefiles which
+   lets you build the program.  After you configure your environment, the next
+   step is to build libping. If that next step fails, you may have to return to
+   this step.  Reasons for reconfiguring are mentioned below.  If configure
+   failed to create Makefiles, then you have problems which may be beyond the
+   scope of this document, such as no compiler ( you'll have to get one ), no
+   libraries ( again, an aquisition on your part ).
+
+3. Compilation
+   To compile the program, execute the second step of the nutshell version
+   mentioned in item #1: type "make" and hope for the best.  If your environment
+   was configured without errors, then configure should have generated the Makefiles
+   that will enable this step to work.
+
+   The make command will invoke your compiler and build libping.  If you are using
+   gcc on any of the platforms mentioned above, then you should not have problems.
+   In general, any ANSI C compiler should work.  libping does not currently support
+   K&R compilers and older versions of the operating systems mentioned in MACHINES.
+
+   Some systems may require options that were not set by the configure script. You
+   can set them using the configure step mentioned above:
+   $ CC=c89 CFLAGS=-O2 LIBS=-lposix ./configure
+
+   You can also set them by editing the Makefiles that were created as a result of
+   running configure, but this is not preferred.
+
+4. Installation
+   If the program compiled successfully, follow the third nutshell step
+   and type "make install"  This will install the package in the directories
+   that you've selected in the configuration step.  If they are not already,
+   make sure PREFIX/bin and PREFIX/man are in your PATH and MANPATH
+   respectively. This process is described in detail in item #2.
+   
+   **NOTE: you will need to install this as root.
+
+5. Uninstall
+   To remove the package, type "make uninstall"  To make the source
+   directory completely clean, type "make distclean".  There are differences
+   of opinion regarding this option.  Some people claim that it should not
+   be available as it depends the orginal Makefiles from the source
+   directory.  Since I tend to hoard all sourcecode, I like this feature.
+
+   The point is, if you've installed one version of libping in /usr/local and
+   another version in $HOME, then make uninstall is obviously not going to
+   work in both locations.  The safest thing to do is manually remove the
+   files which were installed by make install.  The files and their locations
+   are described in item #4.
+
+6. Read the documentation
+   The online help is pretty straight forward ( ring --help ):
+
+   For more detailed information, consult the man pages:
+   $ man ring
+   $ man pinghost
+
+   All the libping man pages are also available online:
+   http://www.joedog.org/libping/docs/man/index.html
+
+7. Tell me about it
+   If you like/dislike libping please let me know.  See name and email below:
+
+--
+
+Please consult the file, COPYING for complete license information.
+
+Copyright (C)2000-2001 Jeffrey Fulmer <jdfulmer@armstrong.com>
+
+Permission is granted to anyone to make or distribute verbatim
+copies of this document as received, in any medium, provided that
+the copyright notice and this permission notice are preserved, thus
+giving the recipient permission to redistribute in turn.
+
+Permission is granted to distribute modified versions of this
+document, or of portions of it, under the above conditions,
+provided also that they carry prominent notices stating who last
+changed them.
+
+

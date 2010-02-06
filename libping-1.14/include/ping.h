@@ -1,0 +1,89 @@
+/**
+ * LIBPING header
+ * VERSION 1.14 2001-07-05
+ *
+ * Copyright (C) 2001 Jeffrey Fulmer <jdfulmer@armstrong.com>
+ * This file is part of LIBPING
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ *
+ */
+#ifndef PING_H
+#define PING_H
+
+/* issue an ICMP_ECHO request with the default timeout. */
+int pinghost  ( const char *hostname );
+/* issue an ICMP_ECHO request with a specified timeout. */
+int pingthost ( const char *hostname, int t );
+
+/* issue a tcp ECHO request with the default timeout.   */
+int echohost  ( const char *hostname, int size );
+/* issue a tcp ECHO request with a specified timeout.   */
+int echothost ( const char *hostname, int size, int t );    
+
+/* issue a tcp ECHO request with the default timeout.
+   return round trip time in milliseconds.              */ 
+int techohost  ( const char *hostname, int size );
+/* issue a tcp ECHO request with a specified timeout.
+   return round trip time in milliseconds.              */ 
+int techothost ( const char *hostname, int size, int t );  
+
+/* issue an ICMP_ECHO request with the default timeout,
+   return the round trip time in milliseconds.          */
+int tpinghost ( const char *hostname );
+/* issue an ICMP_ECHO request with a specified timeout,
+   return the round trip time in milliseconds.          */
+int tpingthost( const char *hostname, int t );
+
+/* issue a request for service to a POP3 daemon with the
+   default timeout.                                     */
+int pingpop3 ( const char *hostname );
+/* issue a request for service to a POP3 daemon with a
+   specified timeout.                                   */
+int pingtpop3( const char *hostname, int t );
+/* issue a request for service to a POP3 daemon with the
+   default timeout, return round trip time in millisecs */  
+int tpingpop3( const char *hostname );
+/* issue a request for service to a POP3 daemon with a 
+   specified timeout, return round trip time in msecs   */ 
+int tpingtpop3( const char *hostname, int t ); 
+
+/* issue a request for service to a SMTP daemon with the
+   default timeout.                                     */
+int pingsmtp ( const char *hostname );
+/* issue a request for service to a SMTP daemon with a
+   specified timeout.                                   */
+int pingtsmtp( const char *hostname, int t );
+/* issue a request for service to a SMTP daemon with the
+   default timeout, return round trip time in millisecs */  
+int tpingsmtp( const char *hostname );
+/* issue a request for service to a SMTP daemon with a
+   specified timeout, return round trip time in msecs   */  
+int tpingtsmtp( const char *hostname, int t );   
+
+/* issue a request for a HTTP/HTTPS page from an httpd
+   with the default timeout.                            */
+int pinghttp ( char *hostname );
+/* issue a request for a HTTP/HTTPS page from an httpd
+   with a specified timeout.                            */
+int pingthttp( char *hostname, int t );
+/* issue a request for a HTTP/HTTPS page from an httpd
+   with the default timeout, return RRT in msecs        */  
+int tpinghttp ( char *hostname );
+/* issue a request for a HTTP/HTTPS page from an httpd
+   with a specified timeout, return RRT in msecs        */
+int tpingthttp( char *hostname, int t ); 
+
+#endif/*PING_H*/

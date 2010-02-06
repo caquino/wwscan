@@ -1,0 +1,53 @@
+
+                       libping README
+
+WHAT IS IT?
+-----------
+Libping is a small C library designed to allow a programmer to 
+make ICMP_ECHO requests and network services inquiries directly 
+from a script or program. The library includes support for pinging 
+HTTP/HTTPS, POP3, and SMTP services. The distribution includes 
+ring, a script-friendly utility linked to the library and intended 
+to be invoked directly from scripts. Unlike most ping utilities, 
+libping will timeout on both unreachable hosts and unreachable 
+networks. It returns a value every time it is called, a feature 
+which makes programming ICMP echo requests simpler and more 
+reliable. 
+
+
+WHERE IS IT?
+------------
+The latest version of libping can be obtained via anonymous ftp:
+ftp://ftp.armstrong.com/pub/libping/libping-latest.tar.gz
+
+Updates, announcements, documentation is available via the web
+at http://www.joedog.org
+
+INSTALLATION
+------------
+libping was built with  GNU autoconf.  If you are familiar with
+GNU software, then you should be comfortable installing libping
+Please consult the file INSTALL for more details.
+
+DOCUMENTATION
+-------------
+Documentation is available in man pages pinghost(1) ring(1)
+An html manual is available online:
+http://www.joedog.org/libping/docs/manual.html
+
+LICENSE
+-------
+Please consult the file, COPYING for complete license information.
+
+Copyright (C) 2000  Jeffrey Fulmer <jdfulmer@armstrong.com>
+
+Permission is granted to anyone to make or distribute verbatim
+copies of this document as received, in any medium, provided that
+the copyright notice and this permission notice are preserved, 
+thus giving the recipient permission to redistribute in turn.
+
+Permission is granted to distribute modified versions of this
+document, or of portions of it, under the above conditions,
+provided also that they carry prominent notices stating who last
+changed them.
+

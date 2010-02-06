@@ -1,0 +1,73 @@
+.\" Copyright 2001 by Jeffrey Fulmer <jdfulmer@armstrong.com>
+.\"
+.\" Permission is granted to make and distribute verbatim copies of this
+.\" manual provided the copyright notice and this permission notice are
+.\" preserved on all copies.
+.\"
+.\" Permission is granted to copy and distribute modified versions of this
+.\" manual under the conditions for verbatim copying, provided that the
+.\" entire resulting derived work is distributed under the terms of a
+.\" permission notice identical to this one
+.\" 
+.TH PINGPOP3 3  "July 06, 2001" "" "libping Programmer's Manual"
+.SH NAME
+.B pingpop3, pingtpop3 
+\- issue a socket request to a POP3 host.
+.br
+.B tpingpop3, tpingtpop3 
+\- issue a socket request to a POP3 host and return the round trip time
+in milliseconds.
+.SH SYNOPSIS
+.nf
+.B #include <ping.h>
+.sp
+.BI "int pingpop3(const char *" host " );
+.sp
+.BI "int pingtpop3(const char *" host ", int t );
+.sp
+.BI "int tpingpop3(const char *" host " );
+.sp
+.BI "int tpingtpop3(const char *" host ", int t );  
+.fi
+.SH DESCRIPTION
+The \fBpingpop3()\fP function issues a socket request to a POP3
+host.  It returns 1 if the host replies +OK, 0 if the ping request
+times out and less than zero on an networking error (see return
+values below.)
+.PP
+The \fBpingtpop3()\fP function is similar, except it accepts a 
+user specified timeout value. The default timeout value used
+by pingtpop3() is 10 seconds. On slower, less reliable networks
+you may want to increase the timeout value. (pronounced: ping-tee-pop-three)
+.PP
+The \fBtpingpop3()\fP function issues a socket request to a POP3
+host.  On success, it returns the round trip time in milliseconds.
+(pronounced: tee-ping-pop-three)
+.PP
+The \fBtpingtpop3()\fP function is similar, except it accepts a
+user specified timeout value. The default timeout value used
+by tpingtpop3() is 10 seconds. On slower, less reliable networks
+you may want to increase the timeout value. 
+(pronounced: tee-ping-tee-pop-three)
+.SH "RETURN VALUE"
+The \fBpingpop3()\fP, \fBpingtpop3()\fP, \fBtpingpop3()\fP, and 
+\fBtpingtpop3()\fP functions return an integer 
+value.\fB
+.br
+>1 \-\- Round trip time in milliseconds.\fB
+.br
+ 1 \-\- Host is alive.\fB
+.br
+ 0 \-\- Connection timed out.\fB
+.br
+\-1 \-\- Host or service is unreachable.\fB
+.br
+\-2 \-\- Socket error.\fB
+.br
+\-3 \-\- Connection refused.\fB
+.br
+.SH "CONFORMING TO"
+SVID 3, POSIX, BSD 4.3, ISO 9899
+.SH "SEE ALSO"
+.BR ring "(1), "  pinghost "(3), " echohost "(3), " pinghttp "(3), "  pingsmtp "(3)"
+
